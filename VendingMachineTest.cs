@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using System.IO;
 namespace VendingMachineTechTest
 {
     [TestFixture()]
@@ -13,10 +14,23 @@ namespace VendingMachineTechTest
         }
 
         [Test()]
-        public void ItemsArrayOfProducts()
+        public void ItemsArrayHasALengthOfTwo()
 		{
 			VendingMachine vendingMachine = new VendingMachine();
-            Assert.AreEqual(3, vendingMachine.Items.Length);
+            Assert.AreEqual(2, vendingMachine.Items.Length);
 		}
+
+		[Test()]
+		public void DisplayItemsMethodOutputsToConsole()
+		{
+            using (StringWriter sw = new StringWriter())
+            {
+                Console.SetOut(sw); 
+                VendingMachine vendingMachine = new VendingMachine();
+                vendingMachine.DisplayItems();
+                Assert.AreEqual("Bottled Water - Price £0.60p\nCrisps - Price £0.40p\n", sw.ToString());
+            }
+		}
+
     }
 }

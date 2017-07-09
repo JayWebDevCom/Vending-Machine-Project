@@ -18,7 +18,13 @@ namespace VendingMachineTechTest
 			}
 		}
 
+		public void DisplayItems()
+		{
+			foreach (var item in items)
+			{
+                Console.Out.WriteLine("{0} - Price {1:c}p", item.Name, item.Price);
+			}
+		}  
 	}
-
-	 
+ 
 }
