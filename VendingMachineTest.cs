@@ -6,8 +6,10 @@ namespace VendingMachineTechTest
     public class VendingMachineTest
     {
         [Test()]
-        public void TestCase()
+        public void Instantiation()
         {
+            VendingMachine vendingMachine = new VendingMachine();
+            Assert.IsInstanceOf<VendingMachine>(vendingMachine);
         }
     }
 }
