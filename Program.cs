@@ -10,6 +10,10 @@ namespace VendingMachineTechTest
 
 			vendingMachine.DisplayItems();
 
+			var selection = vendingMachine.RequestSelection();
+
+			char selectionchar = Convert.ToChar(selection); 
+
 		}
     }
 }

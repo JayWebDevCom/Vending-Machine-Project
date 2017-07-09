@@ -32,5 +32,21 @@ namespace VendingMachineTechTest
             }
 		}
 
+		[Test()]
+		public void RequestSelectionReceivesTheCorrectInputFromConsole()
+		{
+            using (StringWriter sw = new StringWriter())
+            {
+                using (StringReader sr = new StringReader("C"))
+                {
+                    Console.SetOut(sw);
+                    Console.SetIn(sr);
+					VendingMachine vendingMachine = new VendingMachine();
+                    var selection = vendingMachine.RequestSelection();
+                    Assert.AreEqual(selection, 'C');
+                }
+            }
+		}
+
     }
 }
