@@ -49,7 +49,16 @@ namespace VendingMachineTechTest
 			}
 
 			return selection;
-		} 
+		}
+
+		public Product Find(char selection)
+		{
+			string stringselection = Convert.ToString(selection);
+
+			var product = Array.Find(this.items, item => item.name.StartsWith(stringselection, StringComparison.Ordinal));
+
+			return product;
+		}  
 	}
  
 }

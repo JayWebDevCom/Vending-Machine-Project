@@ -48,5 +48,20 @@ namespace VendingMachineTechTest
             }
 		}
 
+        [Test()]
+        public void CharacterfromConsoleCorrectlyFindsCorrespondingItemOne()
+		{
+			VendingMachine vendingMachine = new VendingMachine();
+            var product = vendingMachine.Find('C');
+            Assert.AreEqual("Crisps", product.Name);
+		}
+
+        [Test()]
+		public void CharacterfromConsoleCorrectlyFindsCorrespondingItemTwo()
+		{
+			VendingMachine vendingMachine = new VendingMachine();
+			var product = vendingMachine.Find('B');
+			Assert.AreEqual("Bottled Water", product.Name);
+		}
     }
 }
