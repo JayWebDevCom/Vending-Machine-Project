@@ -14,6 +14,7 @@
 			double change = (coinsRequired * acceptedCoin) - cost;
 			double[] paymentInfo = { coinsRequired, change };
 
-	             return paymentInfo;
-		}
+			Console.Out.WriteLine("Please enter {0} x {1:c} coins", coinsRequired, acceptedCoin);
+			Console.Out.WriteLine("Your change will be {0:c}", change);
+			             return paymentInfo; 		}
 	} }  

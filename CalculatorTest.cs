@@ -1,5 +1,4 @@
-﻿using Moq;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System;
 namespace VendingMachineTechTest
 {
@@ -16,7 +15,7 @@ namespace VendingMachineTechTest
         [Test()]
 		public void CalculatesChangeAndCoinsRequired()
 		{
-			Calculator calculator = new Calculator();
+            Calculator calculator = new Calculator();
             Product juice = new Product("Juice", 0.80d);
             double[] returned = calculator.PaymentAndChange(juice);
             var returnedFormatted = Convert.ToDecimal(returned[1]);
@@ -27,15 +26,16 @@ namespace VendingMachineTechTest
 		}
 
 		[Test()]
-		public void CalculatesChangeAndCoinsRequiredTwo()
+        public void CalculatesChangeAndCoinsRequiredTwo()
 		{
-			Calculator calculator = new Calculator();
-			Product biscuits = new Product("Bisuits", 0.10d);
-			double[] returned = calculator.PaymentAndChange(biscuits);
-			
-            Assert.AreEqual(1, returned[0]);
-			Assert.AreEqual(0.40, returned[1]);
-			Assert.AreEqual(2, returned.Length);
+		
+                Calculator calculator = new Calculator();
+				Product biscuits = new Product("Bisuits", 0.10d);
+				double[] returned = calculator.PaymentAndChange(biscuits);
+
+				Assert.AreEqual(1, returned[0]);
+				Assert.AreEqual(0.40, returned[1]);
+				Assert.AreEqual(2, returned.Length);
 		}
 
 		[Test()]

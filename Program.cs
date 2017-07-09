@@ -6,7 +6,7 @@ namespace VendingMachineTechTest
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.Out.WriteLine("Hello World!");
         }
     }
 }
