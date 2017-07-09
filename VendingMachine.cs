@@ -10,5 +10,15 @@ namespace VendingMachineTechTest
 			items[1] = new Product("Crisps", 0.40);
 		}
 
+		public Array Items
+		{
+			get
+			{
+				return items;
+			}
+		}
+
 	}
+
+	 
 }
