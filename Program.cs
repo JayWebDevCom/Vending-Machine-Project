@@ -12,7 +12,14 @@ namespace VendingMachineTechTest
 
 			var selection = vendingMachine.RequestSelection();
 
-			char selectionchar = Convert.ToChar(selection); 
+			char selectionchar = Convert.ToChar(selection);
+
+            Product product = vendingMachine.Find(selectionchar); 
+            Calculator calculator = new Calculator();
+
+            var paymentInfo = calculator.PaymentAndChange(product);
+
+            vendingMachine.TakePayment(paymentInfo[0], paymentInfo[1], product);
 
 		}
     }

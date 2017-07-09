@@ -41,11 +41,11 @@ namespace VendingMachineTechTest
 
 			char selection = Convert.ToChar(Console.ReadLine().ToUpper());
 
-
-			while (!accepted.Contains(selection))
+			while (!accepted.Contains(selection) )
 			{
 				Console.Out.WriteLine("{0} Not vailable, please choose again.", selection);
-				selection = Convert.ToChar(Console.ReadLine().ToUpper());
+
+                selection = Convert.ToChar(Console.ReadLine().ToUpper());
 			}
 
 			return selection;
@@ -58,7 +58,36 @@ namespace VendingMachineTechTest
 			var product = Array.Find(this.items, item => item.name.StartsWith(stringselection, StringComparison.Ordinal));
 
 			return product;
-		}  
+		}
+
+		public void TakePayment(double coinsRequired, double change, Product product)
+		{
+			double total = 0;
+			double paymentReceived = 0;
+			double receivedCoin = 0;
+
+			Console.WriteLine("Please enter a payment of 50p as 0.50");
+
+			while (total < coinsRequired)
+			{
+				receivedCoin = double.Parse(Console.ReadLine(), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.NumberFormatInfo.InvariantInfo);
+
+                while (receivedCoin != 0.50 )
+				{
+
+                    Console.WriteLine("Sorry {0} coin is not accepted.", receivedCoin);
+					receivedCoin = double.Parse(Console.ReadLine(), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.NumberFormatInfo.InvariantInfo);
+				}
+
+				total += 1;
+				paymentReceived += receivedCoin;
+				Console.WriteLine("Received {0}, Outstanding {1}", total, coinsRequired - total);
+			}
+
+			Console.WriteLine("Thank you for your payment of {0:c}", paymentReceived);
+			Console.WriteLine("Your product {0} has been dispensed", product.Name);
+			Console.WriteLine("Your change of {0:c} has been dispensed also", change);
+		}   
 	}
  
 }
