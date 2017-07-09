@@ -85,7 +85,28 @@ namespace VendingMachineTechTest
 			
 		}
 
-	
+		[Test()]
+		public void TakePaymentMethodReturnsPaymentProductChangeBottledWater()
+		{
+			using (StringReader sr = new StringReader("0.50"))
+			{
+                using (StringReader sr2 = new StringReader("0.50"))
+                {
+                    using (StringWriter sw = new StringWriter())
+                    {
+                        Console.SetIn(sr);
+                        Console.SetOut(sw);
+                        VendingMachine vendingMachine = new VendingMachine();
+                        Product product = new Product("Bottled Water", 0.60);
+                        vendingMachine.TakePayment(2, 0.40, product);
+                        Assert.AreEqual("Please enter a payment of 50p as 0.50\n" +
+                                        "Received 1, Outstanding 0\nThank you for your payment " +
+                                        "of £0.50\nYour product Botteld Water has been dispensed\nYour change " +
+                                        "of £0.40 has been dispensed also\n", sw.ToString());
+                    }
+                }
+			}
 
+		}
     }
 }
