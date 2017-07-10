@@ -35,8 +35,9 @@ namespace VendingMachineTechTest
 
 			foreach (var item in items)
 			{
-				accepted.Add(item.Name[0]);
-				Console.Out.WriteLine("Please enter {0} For {1}.", item.Name[0], item.Name);
+                char productCharacter = item.Name[0];
+				accepted.Add(productCharacter);
+				Console.Out.WriteLine("Please enter {0} For {1}.", productCharacter, item.Name);
 			}
 
 			char selection = Convert.ToChar(Console.ReadLine().ToUpper());
