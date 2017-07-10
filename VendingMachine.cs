@@ -84,10 +84,16 @@ namespace VendingMachineTechTest
 				Console.WriteLine("Received {0}, Outstanding {1}", total, coinsRequired - total);
 			}
 
+            ThankCustomer(paymentReceived, product.Name, change);
+		}
+
+
+        public void ThankCustomer(double paymentReceived, string name, double change)
+        {
 			Console.WriteLine("Thank you for your payment of {0:c}", paymentReceived);
-			Console.WriteLine("Your product {0} has been dispensed", product.Name);
+			Console.WriteLine("Your product {0} has been dispensed", name);
 			Console.WriteLine("Your change of {0:c} has been dispensed also", change);
-		}   
+        }  
 	}
  
 }
