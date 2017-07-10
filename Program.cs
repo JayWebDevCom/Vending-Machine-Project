@@ -10,11 +10,9 @@ namespace VendingMachineTechTest
 
 			vendingMachine.DisplayItems();
 
-			var selection = vendingMachine.RequestSelection();
+			var selectionChar = vendingMachine.RequestSelection();
 
-			char selectionchar = Convert.ToChar(selection);
-
-            Product product = vendingMachine.Find(selectionchar); 
+            Product product = vendingMachine.Find(selectionChar); 
             Calculator calculator = new Calculator();
 
             var paymentInfo = calculator.PaymentAndChange(product);
