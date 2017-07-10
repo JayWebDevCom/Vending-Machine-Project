@@ -37,7 +37,7 @@ namespace VendingMachineTechTest
 			{
                 char productCharacter = item.Name[0];
 				accepted.Add(productCharacter);
-				Console.Out.WriteLine("Please enter {0} For {1}.", productCharacter, item.Name);
+				Console.Out.WriteLine("Please enter {0} for {1}.", productCharacter, item.Name);
 			}
 
 			char selection = Convert.ToChar(Console.ReadLine().ToUpper());

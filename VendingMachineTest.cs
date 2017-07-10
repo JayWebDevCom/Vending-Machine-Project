@@ -33,6 +33,24 @@ namespace VendingMachineTechTest
 		}
 
 		[Test()]
+        public void RequestSelectionOutputsCorrectDetailsToConsole()
+		{
+			using (StringWriter sw = new StringWriter())
+			{
+				using (StringReader sr = new StringReader("C"))
+				{
+					Console.SetOut(sw);
+					Console.SetIn(sr);
+					VendingMachine vendingMachine = new VendingMachine();
+                    var selection = vendingMachine.RequestSelection();
+                    string message = "Please make your selection...\nPlease enter B for Bottled Water.\nPlease enter C for Crisps.\n";
+					Assert.AreEqual(message, sw.ToString());
+				}
+			}
+		}
+		
+
+        [Test()]
 		public void RequestSelectionReceivesTheCorrectInputFromConsole()
 		{
             using (StringWriter sw = new StringWriter())
