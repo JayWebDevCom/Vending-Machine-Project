@@ -40,13 +40,14 @@ namespace VendingMachineTechTest
 				Console.Out.WriteLine("Please enter {0} for {1}.", productCharacter, item.Name);
 			}
 
-			char selection = Convert.ToChar(Console.ReadLine().ToUpper());
 
-			while (!accepted.Contains(selection) )
+            char selection = Console.ReadLine().ToUpper()[0];
+
+			while (!accepted.Contains(selection))
 			{
 				Console.Out.WriteLine("{0} Not vailable, please choose again.", selection);
 
-                selection = Convert.ToChar(Console.ReadLine().ToUpper());
+                selection = Console.ReadLine().ToUpper()[0];
 			}
 
 			return selection;
