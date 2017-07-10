@@ -12,7 +12,10 @@ This is a C# solution for a vending machine that accepts only 50p coins. It is h
 ### Design
 I separated the responsibilities of the vending machine project into three classes - Vending Machine, Product and Calculator. They are described below.
 
-##### Vending Machine Class
+![classdiagram](images/classdiagram.jpg)
+
+
+### Vending Machine Class
 * Responsible for interacting with the customer.
 
 | Function  | Responsibility |
@@ -23,14 +26,14 @@ I separated the responsibilities of the vending machine project into three class
 | `void TakePayment(double coinsRequired, double change, Product product)` | The calculator class has a function that will return the number of coins required and and the change necessary. This function will request the customer to enter their payment. It will receive 50p coins until the number received matches the number stipulated by the calculator class. It will then call `ThankCustomer()`. |
 | `void ThankCustomer(paymentReceived, product.Name, change)` | This method clarifies the entire operation. It informs the customer of their purchase success. That they get their product and the correct change owed. |
 
-##### Calculator Class
+### Calculator Class
 * Responsible for providing necessary payment information.
 
 | Function  | Responsibility |
 | ------ | ----------- |
 | `double[] ReturnPaymentAndChange(double productPrice)` | Passed only the price of the item, this method returns the number of 50p coins necessary for purchase and the corresponding change necessary. It executes a `Math.Ceiling()` function and a simple subtraction to calculate necessary change. These two doubles are returned as an array and passed to the Vending Machine `TakePayment()` function.  |
 
-##### Product Class
+### Product Class
 * Responsible for encapsulation of the attributes of items that can be purchased by customers.
 
 | Attribute  | Responsibility |
