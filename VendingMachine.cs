@@ -67,7 +67,7 @@ namespace VendingMachineTechTest
 			double paymentReceived = 0;
 			double receivedCoin = 0;
 
-			Console.WriteLine("Please enter a payment of 50p as 0.50");
+            Console.WriteLine("Please enter a payment of 50p as 0.50");
 
 			while (total < coinsRequired)
 			{

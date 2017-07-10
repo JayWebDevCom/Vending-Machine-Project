@@ -25,6 +25,15 @@ I separated the responsibilities of the vending machine in to three classes - Ve
 | `TakePayment(double coinsRequired, double change, Product product)` | The calculator class has a function that will return the number of coins required and and the change necessary. This function will request the customer to enter their payment. It will receive 50p coins until the number received matches the number stipulated by the calculator class. It will then call `ThankCustomer()`. |
 | `ThankCustomer(paymentReceived, product.Name, change)` | This method clarifies the entire operation. It informs the customer of their purchase success. That they get their product and the correct change owed. |
 
+##### Calculator Class
+* Responsible for providing necessary payment information.
+
+| Function  | Responsibility |
+| ------ | ----------- |
+
+
+
+
 
 #### Considerations
 - Wrong Coins being inserted
