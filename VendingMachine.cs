@@ -52,7 +52,7 @@ namespace VendingMachineTechTest
 			return selection;
 		}
 
-		public Product Find(char selection)
+		public Product FindAndReturnProduct(char selection)
 		{
 			string stringselection = Convert.ToString(selection);
 

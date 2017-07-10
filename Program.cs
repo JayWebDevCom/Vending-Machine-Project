@@ -12,7 +12,7 @@ namespace VendingMachineTechTest
 
 			var selectionChar = vendingMachine.RequestSelection();
 
-            Product product = vendingMachine.Find(selectionChar); 
+            Product product = vendingMachine.FindAndReturnProduct(selectionChar); 
             Calculator calculator = new Calculator();
 
             var paymentInfo = calculator.PaymentAndChange(product);

@@ -52,7 +52,7 @@ namespace VendingMachineTechTest
         public void CharacterfromConsoleCorrectlyFindsCorrespondingItemOne()
 		{
 			VendingMachine vendingMachine = new VendingMachine();
-            var product = vendingMachine.Find('C');
+            var product = vendingMachine.FindAndReturnProduct('C');
             Assert.AreEqual("Crisps", product.Name);
 		}
 
@@ -60,7 +60,7 @@ namespace VendingMachineTechTest
 		public void CharacterfromConsoleCorrectlyFindsCorrespondingItemTwo()
 		{
 			VendingMachine vendingMachine = new VendingMachine();
-			var product = vendingMachine.Find('B');
+			var product = vendingMachine.FindAndReturnProduct('B');
 			Assert.AreEqual("Bottled Water", product.Name);
 		}
 

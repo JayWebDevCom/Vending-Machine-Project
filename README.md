@@ -6,7 +6,7 @@
 ### Description
 This is a C# solution for a vending machine that accepts only 50p coins but is able to dispense correct change in correct denominations.
 
-- The vending machine must be allow users to request a product (or products) and deposit the correct number of 50p coins
+- The vending machine must be allow customers to request a product (or products) and deposit the correct number of 50p coins
 
 - The vending machine must respond to show that the correct product is provided along with the correct change
 
@@ -17,12 +17,13 @@ I separated the responsibilities of the vending machine in to three classes - Ve
 ##### Vending Machine Class
 * Responsible for interacting with the customer.
 
-| Method  | Responsibility |
+| Function  | Responsibility |
 | ------ | ----------- |
 | `DisplayItems()` | Outputs a line to the console for each product in its its inventory displaying the product name and product price. The inventory exists as an items array. |
-| `RequestSelection()` | A list is created to hold product information which will be matched against user input. A foreach loop is run. Dynamically, the first letter of each product available is added to the list and a line is output to the console requesting that that letter be used to request that product. User input is received and passed to the find method. |
-| `Find(char selection)` | The character representing the product choice of the user is matched to a product in the items array of the vending machine. The `Array.find()` method is applied here. This method returns the product object. |
-| `TakePayment(double coinsRequired, double change, Product product)` |  \ |
+| `RequestSelection()` | A list is created to hold product information which will be matched against customer input. A foreach loop is run. Dynamically, the first letter of each product available is added to the list and a line is output to the console requesting that that letter be used to request that product. customer input is received and passed to the find function. |
+| `FindAndReturnProduct(char selection)` | The character representing the product choice of the customer is matched to a product in the items array of the vending machine. The `Array.find()` function is applied here. This function returns the product object. |
+| `TakePayment(double coinsRequired, double change, Product product)` | The calculator class has a function that will return the number of coins required and and the change necessary. This function will request the customer to enter their payment. It will receive 50p coins until the number received matches the number stipulated by the calculator class. It will then call `ThankCustomer()`. |
+| `ThankCustomer(paymentReceived, product.Name, change)` | This method clarifies the entire operation. It informs the customer of their purchase success. That they get their product and the correct change owed. |
 
 
 #### Considerations
