@@ -50,4 +50,4 @@ I separated the responsibilities of the vending machine project into three class
   - if it were the case that two product names began with the same letter then I would use the first two letters to represent the product. I would then correspondingly prompt the customer to enter the first two letters of the product name that they wish to purchase.
 
 #### Further Developments
-I would like to extract the product inventory out to a separate class. This would allow for manipulation of product quantities without disruption to the vending machine class. I may do this by instantiating a vending machine attribute which directly references an Inventory Object.
+I would like to extract the product inventory out to a separate class. This would allow for manipulation of product quantities without disruption to the vending machine class. I may do this by instantiating a vending machine with an attribute which directly references an Inventory Object.

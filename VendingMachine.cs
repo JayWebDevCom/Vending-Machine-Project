@@ -21,10 +21,15 @@ namespace VendingMachineTechTest
 
 		public void DisplayItems()
 		{
+            Console.Out.WriteLine("Items available are as follows...");
+            Console.Out.WriteLine();
+
 			foreach (var item in items)
 			{
                 Console.Out.WriteLine("{0} - Price {1:c}p", item.Name, item.Price);
 			}
+
+            Console.Out.WriteLine();
 		}
 
 		public char RequestSelection()
@@ -39,7 +44,6 @@ namespace VendingMachineTechTest
 				accepted.Add(productCharacter);
 				Console.Out.WriteLine("Please enter {0} for {1}.", productCharacter, item.Name);
 			}
-
 
             char selection = Console.ReadLine().ToUpper()[0];
 

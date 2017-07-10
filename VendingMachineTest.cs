@@ -28,7 +28,8 @@ namespace VendingMachineTechTest
                 Console.SetOut(sw); 
                 VendingMachine vendingMachine = new VendingMachine();
                 vendingMachine.DisplayItems();
-                Assert.AreEqual("Bottled Water - Price £0.60p\nCrisps - Price £0.40p\n", sw.ToString());
+                string message = "Items available are as follows...\n\nBottled Water - Price £0.60p\nCrisps - Price £0.40p\n\n";
+                Assert.AreEqual(message, sw.ToString());
             }
 		}
 
