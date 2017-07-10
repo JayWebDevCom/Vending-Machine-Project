@@ -2,7 +2,6 @@
 
 ![vending-machine](https://media.licdn.com/mpr/mpr/p/3/005/093/1c1/3d3c719.jpg)
 
-
 ### Description
 This is a C# solution for a vending machine that accepts only 50p coins but is able to dispense correct change in correct denominations.
 
@@ -30,9 +29,15 @@ I separated the responsibilities of the vending machine in to three classes - Ve
 
 | Function  | Responsibility |
 | ------ | ----------- |
+| `ReturnPaymentAndChange(double productPrice)` | Passed only the price of the item, this method i) returns the number of 50p coins necessary for purchase and the corresponding change necessary. It executes a `Math.Ceiling()` function and a simple subtraction to calculate necessary change. These two doubles are returned as an array and passed to the Vending Machine `TakePayment()` function.  |
 
+##### Product Class
+* Responsible for encapsulation of the attributes purchase options.
 
-
+| Attribute  | Responsibility |
+| ------ | ----------- |
+| Name | The display name of the given product |
+| Price | The payment necessary for the purchase of the given product |
 
 
 #### Considerations
