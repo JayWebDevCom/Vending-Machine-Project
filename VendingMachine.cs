@@ -62,7 +62,7 @@ namespace VendingMachineTechTest
 
 		public void TakePayment(double coinsRequired, double change, Product product)
 		{
-			double total = 0;
+			int total = 0;
 			double paymentReceived = 0;
 			double receivedCoin = 0;
 
@@ -74,7 +74,6 @@ namespace VendingMachineTechTest
 
                 while (receivedCoin != 0.50 )
 				{
-
                     Console.WriteLine("Sorry {0} coin is not accepted.", receivedCoin);
 					receivedCoin = double.Parse(Console.ReadLine(), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.NumberFormatInfo.InvariantInfo);
 				}
