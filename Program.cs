@@ -15,7 +15,7 @@ namespace VendingMachineTechTest
             Product product = vendingMachine.FindAndReturnProduct(selectionChar); 
             Calculator calculator = new Calculator();
 
-            var paymentInfo = calculator.PaymentAndChange(product);
+            var paymentInfo = calculator.ReturnPaymentAndChange(product);
 
             vendingMachine.TakePayment(paymentInfo[0], paymentInfo[1], product);
 

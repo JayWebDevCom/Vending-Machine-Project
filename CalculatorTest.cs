@@ -17,7 +17,7 @@ namespace VendingMachineTechTest
 		{
             Calculator calculator = new Calculator();
             Product juice = new Product("Juice", 0.80d);
-            double[] returned = calculator.PaymentAndChange(juice);
+            double[] returned = calculator.ReturnPaymentAndChange(juice);
             var returnedFormatted = Convert.ToDecimal(returned[1]);
 
             Assert.AreEqual(2, returned[0]);
@@ -31,7 +31,7 @@ namespace VendingMachineTechTest
 		
                 Calculator calculator = new Calculator();
 				Product biscuits = new Product("Bisuits", 0.10d);
-				double[] returned = calculator.PaymentAndChange(biscuits);
+				double[] returned = calculator.ReturnPaymentAndChange(biscuits);
 
 				Assert.AreEqual(1, returned[0]);
 				Assert.AreEqual(0.40, returned[1]);
@@ -43,7 +43,7 @@ namespace VendingMachineTechTest
 		{
 			Calculator calculator = new Calculator();
 			Product biscuits = new Product("Chocolate", 0.50);
-			double[] returned = calculator.PaymentAndChange(biscuits);
+			double[] returned = calculator.ReturnPaymentAndChange(biscuits);
 
 			Assert.AreEqual(1, returned[0]);
 			Assert.AreEqual(0, returned[1]);

@@ -7,7 +7,7 @@
 		{
 		}
 
-		public double[] PaymentAndChange(Product product)
+		public double[] ReturnPaymentAndChange(Product product)
 		{
 			double cost = product.Price;
 			double coinsRequired = Math.Ceiling(cost / acceptedCoin);
