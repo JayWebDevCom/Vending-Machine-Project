@@ -7,9 +7,9 @@
 		{
 		}
 
-		public double[] ReturnPaymentAndChange(Product product)
+        public double[] ReturnPaymentAndChange(double productPrice)
 		{
-			double cost = product.Price;
+			double cost = productPrice;
 			double coinsRequired = Math.Ceiling(cost / acceptedCoin);
 			double change = (coinsRequired * acceptedCoin) - cost;
 			double[] paymentInfo = { coinsRequired, change };

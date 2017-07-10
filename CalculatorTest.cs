@@ -16,8 +16,7 @@ namespace VendingMachineTechTest
 		public void CalculatesChangeAndCoinsRequired()
 		{
             Calculator calculator = new Calculator();
-            Product juice = new Product("Juice", 0.80d);
-            double[] returned = calculator.ReturnPaymentAndChange(juice);
+            double[] returned = calculator.ReturnPaymentAndChange(0.80);
             var returnedFormatted = Convert.ToDecimal(returned[1]);
 
             Assert.AreEqual(2, returned[0]);
@@ -30,8 +29,7 @@ namespace VendingMachineTechTest
 		{
 		
                 Calculator calculator = new Calculator();
-				Product biscuits = new Product("Bisuits", 0.10d);
-				double[] returned = calculator.ReturnPaymentAndChange(biscuits);
+				double[] returned = calculator.ReturnPaymentAndChange(0.10);
 
 				Assert.AreEqual(1, returned[0]);
 				Assert.AreEqual(0.40, returned[1]);
@@ -42,8 +40,7 @@ namespace VendingMachineTechTest
 		public void CalculatesChangeAndCoinsRequiredThree()
 		{
 			Calculator calculator = new Calculator();
-			Product biscuits = new Product("Chocolate", 0.50);
-			double[] returned = calculator.ReturnPaymentAndChange(biscuits);
+			double[] returned = calculator.ReturnPaymentAndChange(0.50);
 
 			Assert.AreEqual(1, returned[0]);
 			Assert.AreEqual(0, returned[1]);
