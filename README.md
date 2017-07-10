@@ -19,9 +19,11 @@ I separated the responsibilities of the vending machine in to three classes - Ve
 
 | Method  | Responsibility |
 | ------ | ----------- |
-| DisplayItems() | Outputs a line to the console for each product in its its inventory displaying the product name and product price. The inventory exists as an `items` array. |
-| RequestSelection() | A list is created to hold product information which will be matched against user input. A foreach loop is run. Dynamically, the first letter of each product available is added to the list and a line is output to the console requesting that that letter be used to request that product. User input is received and passed to the find method. |
-| Find() | d  | 
+| `DisplayItems()` | Outputs a line to the console for each product in its its inventory displaying the product name and product price. The inventory exists as an items array. |
+| `RequestSelection()` | A list is created to hold product information which will be matched against user input. A foreach loop is run. Dynamically, the first letter of each product available is added to the list and a line is output to the console requesting that that letter be used to request that product. User input is received and passed to the find method. |
+| `Find(char selection)` | The character representing the product choice of the user is matched to a product in the items array of the vending machine. The `Array.find()` method is applied here. This method returns the product object. |
+| `TakePayment(double coinsRequired, double change, Product product)` |  \ |
+
 
 #### Considerations
 - Wrong Coins being inserted
