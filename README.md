@@ -3,9 +3,9 @@
 ![vending-machine](https://media.licdn.com/mpr/mpr/p/3/005/093/1c1/3d3c719.jpg)
 
 ### Description
-This is a C# solution for a vending machine that accepts only 50p coins but is able to dispense correct change in correct denominations.
+This is a C# solution for a vending machine that accepts only 50p coins but is able to dispense correct change in other denominations.
 
-- The vending machine must be allow customers to request a product (or products) and deposit the correct number of 50p coins
+- The vending machine allows customers to request a product (or products) and deposit the correct number of 50p coins
 
 - The vending machine must respond to show that the correct product is provided along with the correct change
 
@@ -41,10 +41,11 @@ I separated the responsibilities of the vending machine in to three classes - Ve
 
 
 #### Considerations
-- Wrong Coins being inserted
-- Matching of input string requesting a product
+- Wrong Coins being inserted:
+  - the vending machine can accept only the 50p coin. I had to program to allow the vending machine to determine when it had been fed an incorrect coin and not allow that coin to contribute towards the accumulated total. I did this using a while loop and a `!=` condition in the `TakePayment()` function of the vending machine.
 - Incorrect product requests
+  - the vending machine dispenses only two products, but I believe it prudent to allow for incorrect product requests to be handled appropriately. If a customer enters a character which does not correspond to a product i.e. that character is not found in the list of characters representing available products, then an appropriate response is generated. The customer is asked to make their request again. I did this using a while loop and an `!list.Contains()` condition.
 - List created in `vendingMachine.RequestSelection()` is dynamic and is completely open for extension simply by adding more products to the Vending Machine items array.
 
 #### Further Developments
-I would like to extract the product inventory out to a separate class.
+I would like to extract the product inventory out to a separate class. This would allow for manipulation of product quantities without disruption to the vending machine class.
