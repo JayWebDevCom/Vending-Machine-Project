@@ -1,4 +1,4 @@
-## Vending-Machine-Project
+# Vending-Machine-Project
 
 ![vending-machine](https://media.licdn.com/mpr/mpr/p/3/005/093/1c1/3d3c719.jpg)
 
@@ -9,11 +9,14 @@ This is a C# solution for a vending machine that accepts only 50p coins. It is h
 
 - The vending machine must respond to show that the correct product is provided along with the correct change.
 
+### Configuration
+- This Console Application is built using Visual Studio Community.
+run `Program.cs` for the interactive app.
+
 ### Design
 I separated the responsibilities of the vending machine project into three classes - Vending Machine, Product and Calculator. They are described below.
 
 ![classdiagram](images/classdiagram.jpg)
-
 
 ### Vending Machine Class
 * Responsible for interacting with the customer.
@@ -45,7 +48,7 @@ I separated the responsibilities of the vending machine project into three class
 - Wrong Coins being inserted:
   - the vending machine can accept only 50p coins. I had to program to allow the vending machine to determine when it had been fed an incorrect coin and not allow that coin to contribute towards the accumulated total. I did this using a while loop and a `!= 0.50` condition in the `TakePayment()` function of the vending machine.
 - Incorrect product requests:
-  - the vending machine dispenses only two products, but I believe it prudent for incorrect product requests to be handled appropriately. If a customer enters a character which does not correspond to a product i.e. that character is not found in the list of characters representing available products, then an appropriate response is generated. The customer is asked to make their request again. I did this using a while loop and an `!list.Contains()` condition.
+  - the vending machine dispenses only two products, but I believe it prudent for incorrect product requests to be handled appropriately. If a customer enters a character which does not correspond to a product i.e. that character is not found in the list of characters representing available products, then an appropriate response is generated. The customer is asked to make their request again. I did this using a while loop and an `!list.Contains(selection)` condition.
 - The List created in `vendingMachine.RequestSelection()` is dynamic. It is formed during the code execution and requires no modification to compensate for greater or fewer products. It completely open for extension simply by adding more products to the Vending Machine items array.
   - if it were the case that two product names began with the same letter then I would use the first two letters to represent the product. I would then correspondingly prompt the customer to enter the first two letters of the product name that they wish to purchase.
 
