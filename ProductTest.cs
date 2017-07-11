@@ -16,14 +16,14 @@ namespace VendingMachineTechTest
 		public void ProductName()
 		{
 			Product bottledWater = new Product("Bottled Water", 0.60);
-			Assert.AreEqual(bottledWater.Name, "Bottled Water");
+			Assert.AreEqual("Bottled Water", bottledWater.Name);
 		}
 
 		[Test()]
 		public void ProductPrice()
 		{
 			Product crisps = new Product("Crisps", 0.40);
-			Assert.AreEqual(crisps.Price, 0.40);
+			Assert.AreEqual(0.40, crisps.Price);
 		}
     }
 }

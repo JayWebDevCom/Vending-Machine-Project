@@ -46,7 +46,7 @@ I separated the responsibilities of the vending machine project into three class
 
 #### Considerations
 - Wrong Coins being inserted:
-  - the vending machine can accept only 50p coins. I had to program to allow the vending machine to determine when it had been fed an incorrect coin and not allow that coin to contribute towards the accumulated total. I did this using a while loop and a `!= 0.50` condition in the `TakePayment()` function of the vending machine.
+  - the vending machine can accept only 50p coins. I had to program to allow the vending machine to determine when it had been fed an incorrect coin and not allow that coin to contribute towards the accumulated total. I did this using a while loop and a try-catch block for string input exceptions.
 - Incorrect product requests:
   - the vending machine dispenses only two products, but I believe it prudent for incorrect product requests to be handled appropriately. If a customer enters a character which does not correspond to a product i.e. that character is not found in the list of characters representing available products, then an appropriate response is generated. The customer is asked to make their request again. I did this using a while loop and an `!list.Contains(selection)` condition.
 - The List created in `vendingMachine.RequestSelection()` is dynamic. It is formed during the code execution and requires no modification to accommodate greater or fewer products. It completely open for extension simply by adding more products to the Vending Machine items array.
