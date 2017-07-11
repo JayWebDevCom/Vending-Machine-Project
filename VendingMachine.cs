@@ -75,26 +75,26 @@ namespace VendingMachineTechTest
             Console.WriteLine("Please enter a payment of 50p as 0.50");
 
 			while (total < coinsRequired)
-			{   
-                try 
+			{
+				try 
                 {
                     receivedCoin = double.Parse(Console.ReadLine(), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.NumberFormatInfo.InvariantInfo);
-                }
+					if (receivedCoin == 0.50)
+					{
+						total += 1;
+						paymentReceived += receivedCoin;
+						Console.Out.WriteLine("Received {0}, Outstanding {1}", total, coinsRequired - total);
+					}
+                    else
+                    {
+                        Console.Out.WriteLine("Sorry only 50p coins are accepted");
+                    }
+				}
 
                 catch(FormatException)
                 {
                     Console.Out.WriteLine("Sorry please enter a 50p coin as \"0.50\"");
                 }
-				
-                while (receivedCoin != 0.50 )
-				{
-                    Console.Out.WriteLine("Sorry {0} coin is not accepted.", receivedCoin);
-					receivedCoin = double.Parse(Console.ReadLine(), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.NumberFormatInfo.InvariantInfo);
-				}
-
-				total += 1;
-				paymentReceived += receivedCoin;
-				Console.WriteLine("Received {0}, Outstanding {1}", total, coinsRequired - total);
 			}
 
             ThankCustomer(paymentReceived, productName, change);
