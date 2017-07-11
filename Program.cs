@@ -17,7 +17,7 @@ namespace VendingMachineTechTest
 
             var paymentInfo = calculator.ReturnPaymentAndChange(product.Price);
 
-            vendingMachine.TakePayment(paymentInfo[0], paymentInfo[1], product);
+            vendingMachine.TakePayment(paymentInfo[0], paymentInfo[1], product.Name);
 
 		}
     }

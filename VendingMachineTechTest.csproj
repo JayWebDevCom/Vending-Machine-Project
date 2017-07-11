@@ -49,6 +49,7 @@
     <Compile Include="Product.cs" />
     <Compile Include="Calculator.cs" />
     <Compile Include="VendingMachine.cs" />
+    <Compile Include="Inventory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

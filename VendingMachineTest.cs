@@ -83,7 +83,8 @@ namespace VendingMachineTechTest
 			Assert.AreEqual("Bottled Water", product.Name);
 		}
 
-		[Test()]
+
+        [Test()]
 		public void TakePaymentMethodReturnsPaymentProductChangeCrisps()
 		{
             using (StringReader sr = new StringReader("0.50"))
@@ -93,8 +94,7 @@ namespace VendingMachineTechTest
 					Console.SetIn(sr);
 					Console.SetOut(sw);
 					VendingMachine vendingMachine = new VendingMachine();
-					Product product = new Product("Crisps", 0.40);
-					vendingMachine.TakePayment(1, 0.10, product);
+					vendingMachine.TakePayment(1, 0.10, "Crisps");
 					Assert.AreEqual("Please enter a payment of 50p as 0.50\n"+
                                     "Received 1, Outstanding 0\nThank you for your payment "+
                                     "of £0.50\nYour product Crisps has been dispensed\nYour change "+
@@ -103,7 +103,5 @@ namespace VendingMachineTechTest
             }
 			
 		}
-
-
     }
 }

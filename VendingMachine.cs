@@ -66,7 +66,7 @@ namespace VendingMachineTechTest
 			return product;
 		}
 
-		public void TakePayment(double coinsRequired, double change, Product product)
+		public void TakePayment(double coinsRequired, double change, string productName)
 		{
 			int total = 0;
 			double paymentReceived = 0;
@@ -75,12 +75,20 @@ namespace VendingMachineTechTest
             Console.WriteLine("Please enter a payment of 50p as 0.50");
 
 			while (total < coinsRequired)
-			{
-				receivedCoin = double.Parse(Console.ReadLine(), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.NumberFormatInfo.InvariantInfo);
+			{   
+                try 
+                {
+                    receivedCoin = double.Parse(Console.ReadLine(), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.NumberFormatInfo.InvariantInfo);
+                }
 
+                catch(FormatException)
+                {
+                    Console.Out.WriteLine("Sorry please enter a 50p coin as \"0.50\"");
+                }
+				
                 while (receivedCoin != 0.50 )
 				{
-                    Console.WriteLine("Sorry {0} coin is not accepted.", receivedCoin);
+                    Console.Out.WriteLine("Sorry {0} coin is not accepted.", receivedCoin);
 					receivedCoin = double.Parse(Console.ReadLine(), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.NumberFormatInfo.InvariantInfo);
 				}
 
@@ -89,16 +97,14 @@ namespace VendingMachineTechTest
 				Console.WriteLine("Received {0}, Outstanding {1}", total, coinsRequired - total);
 			}
 
-            ThankCustomer(paymentReceived, product.Name, change);
+            ThankCustomer(paymentReceived, productName, change);
 		}
-
 
         public void ThankCustomer(double paymentReceived, string name, double change)
         {
 			Console.WriteLine("Thank you for your payment of {0:c}", paymentReceived);
 			Console.WriteLine("Your product {0} has been dispensed", name);
 			Console.WriteLine("Your change of {0:c} has been dispensed also", change);
-        }  
+        }
 	}
- 
 }
